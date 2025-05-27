@@ -1,0 +1,115 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: sans-serif;
+  color: white;
+}
+
+.game-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #111;
+}
+
+.table-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  z-index: 2; /* Table is now above bot */
+}
+
+.bot-character {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 300px;
+  z-index: 1; /* Bot is now behind table */
+}
+
+.player-hands {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 450px; /* Increased from 200px */
+  z-index: 3;
+}
+
+.revolver-img {
+  position: absolute;
+  bottom: 120px; /* Adjust if needed for new size */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 250px; /* Increased from 80px */
+  z-index: 4;
+}
+
+.hud-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: none; /* Remove background-image if you want only the bar */
+}
+
+.hud-bar-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30,30,30,0.95); /* or any color/texture you want */
+  border-top: 2px solid #444;
+  z-index: 1;
+}
+
+.hud-bar-buttons {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.hud-bar button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.hud-bar button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.action-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.game-status {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 10;
+}

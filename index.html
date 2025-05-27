@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Russian Roulette Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-screen">
+    <!-- Table at the back -->
+    <img src="media/table.png" alt="Table" class="table-img">
+
+    <!-- Bot on top of table -->
+    <img src="media/bot-placeholder.png" alt="Bot" class="bot-character" id="botImg">
+
+    <!-- Hands in front of table and bot -->
+    <img src="media/player-hands.png" alt="Player Hands" class="player-hands">
+
+    <!-- Revolver between the hands -->
+    <img src="media/revolver.png" alt="Revolver" class="revolver-img">
+
+    <!-- Video overlay for animations -->
+    <video id="actionVideo" class="action-video" autoplay muted hidden></video>
+
+    <!-- Control HUD -->
+    <div class="hud-bar">
+      <div class="hud-bar-bg"></div>
+      <div class="hud-bar-buttons">
+        <button onclick="playerShoot('self')">Shoot Self</button>
+        <button onclick="playerShoot('opponent')">Shoot Opponent</button>
+        <button onclick="spinCylinder()">Spin</button>
+        <button onclick="loadBullet()">Load</button>
+        <button onclick="resetGame()">Reset</button>
+      </div>
+    </div>
+
+    <!-- Game status -->
+    <p id="status" class="game-status">Load the bullet to start.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
